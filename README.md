@@ -93,8 +93,8 @@ Availability(H1, 20240901-20240903, DBL)
 ##### Example Output:
 
 ```
-1
 2
+1
 ```
 
 **Note:** Hotels sometimes allow overbookings, so the availability count can be negative.

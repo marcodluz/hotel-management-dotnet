@@ -1,0 +1,1 @@
+1. I need to count how many rooms in the hotel exists for each room type, and then check in bookings how many are there, and then calculate the available rooms. Create a variable that outputs the availableRooms in my AllocateRooms.

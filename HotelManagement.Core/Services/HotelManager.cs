@@ -25,25 +25,28 @@ namespace HotelManagement.Core.Services
             if (hotel == null) throw new Exception("Hotel not found.");
 
             var availableRooms = hotel.Rooms
-                .Where(r => !IsRoomBooked(hotelId, r.RoomId, date, date))
-                .Select(r => r.RoomType)
+                .GroupBy(r => r.RoomType)
+                .Select(g => new
+                {
+                    RoomType = g.Key,
+                    AvailableCount = g.Count() - bookings.Count(b =>
+                        b.HotelId == hotelId &&
+                        b.RoomType == g.Key &&
+                        b.Arrival <= date &&
+                        b.Departure > date)
+                })
+                .Where(r => r.AvailableCount > 0)
+                .SelectMany(r => Enumerable.Repeat(r.RoomType, r.AvailableCount))
                 .ToList();
+
+            // // Debug the available rooms
+            // Console.WriteLine($"Available rooms: {string.Join(", ", availableRooms)}");
 
             return AllocateRooms(availableRooms, peopleCount);
         }
 
-        private bool IsRoomBooked(string hotelId, string roomId, DateTime startDate, DateTime endDate)
-        {
-            return bookings.Any(b =>
-                b.HotelId == hotelId &&
-                b.Arrival < endDate &&
-                b.Departure > startDate &&
-                b.RoomType == roomId);
-        }
-
         private List<string> AllocateRooms(List<string> availableRooms, int peopleCount)
         {
-            // Prioritize DBL (double) rooms over SGL (single) rooms
             var dblRooms = availableRooms.Where(r => r == "DBL").ToList();
             var sglRooms = availableRooms.Where(r => r == "SGL").ToList();
 
@@ -52,6 +55,7 @@ namespace HotelManagement.Core.Services
             var result = new List<string>();
             int remaining = peopleCount;
 
+            // Prioritize DBL (double) rooms over SGL (single) rooms
             foreach (var roomType in dblRooms)
             {
                 if (remaining <= 0) break;
