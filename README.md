@@ -55,12 +55,13 @@ Before you start, ensure you have the following installed on your machine:
 Once the build is complete, you can run the application with the following command:
 
 ```bash
-dotnet run --project HotelManagement.ConsoleApp --hotels hotels.json --bookings bookings.json
+cd HotelManagement.ConsoleApp
+
+dotnet run --hotels hotels.json --bookings bookings.json
 ```
 
 ### Options
 
-- `--project`: Specifies the path to the console application.
 - `--hotels`: Specifies the path to the JSON file containing hotel data located in the root.
 - `--bookings`: Specifies the path to the JSON file containing booking data located in the root.
 

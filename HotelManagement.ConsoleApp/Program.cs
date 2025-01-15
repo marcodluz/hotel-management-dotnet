@@ -34,9 +34,9 @@ Type 'help' to see all available commands.");
                 {
                     try
                     {
-                        // Load hotel and booking data
-                        var hotels = FileLoader.LoadHotels(options.Hotels);
-                        var bookings = FileLoader.LoadBookings(options.Bookings);
+                        // Load hotel and booking data from the root of the repository
+                        var hotels = FileLoader.LoadHotels("../db/" + options.Hotels);
+                        var bookings = FileLoader.LoadBookings("../db/" + options.Bookings);
 
                         var manager = new HotelManager(hotels, bookings);
 
