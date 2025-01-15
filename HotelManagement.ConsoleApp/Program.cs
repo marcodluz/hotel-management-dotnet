@@ -33,7 +33,7 @@ Type 'help' to see all available commands. Type an empty line to exit.");
                 {
                     try
                     {
-                        // Load hotel and booking data from the root of the repository
+                        // Load hotel and booking data
                         var hotels = FileLoader.LoadHotels(options.Hotels);
                         var bookings = FileLoader.LoadBookings(options.Bookings);
 
