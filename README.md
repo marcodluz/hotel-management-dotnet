@@ -20,9 +20,17 @@ Hotel Management is a command-line tool for managing hotel and booking data with
 
       Navigate to the folder where the application is located and run the command:
 
-      ```bash
-      myapp.exe --hotels hotels.json --bookings bookings.json
-      ```
+      - For Windows PowerShell
+
+        ```bash
+        .\myapp.exe --hotels hotels.json --bookings bookings.json
+        ```
+
+      - For Windows Command Prompt
+
+        ```bash
+        myapp.exe --hotels hotels.json --bookings bookings.json
+        ```
 
 # Contribution
 
