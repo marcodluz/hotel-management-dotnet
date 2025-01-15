@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelManagement.Console", "HotelManagement.Console\HotelManagement.Console.csproj", "{7BFFC3C7-110B-459B-9B74-5C7565FF4829}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelManagement.ConsoleApp", "HotelManagement.ConsoleApp\HotelManagement.ConsoleApp.csproj", "{7BFFC3C7-110B-459B-9B74-5C7565FF4829}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelManagement.Core", "HotelManagement.Core\HotelManagement.Core.csproj", "{3EA64AF5-0066-4180-90C0-D4BA72350374}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +14,9 @@ Global
 		{7BFFC3C7-110B-459B-9B74-5C7565FF4829}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BFFC3C7-110B-459B-9B74-5C7565FF4829}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BFFC3C7-110B-459B-9B74-5C7565FF4829}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EA64AF5-0066-4180-90C0-D4BA72350374}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EA64AF5-0066-4180-90C0-D4BA72350374}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EA64AF5-0066-4180-90C0-D4BA72350374}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EA64AF5-0066-4180-90C0-D4BA72350374}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
