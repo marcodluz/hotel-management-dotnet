@@ -26,27 +26,30 @@ namespace HotelManagement.ConsoleApp
                                                                             
 Welcome to the Hotel Management System!
 
-Type 'help' to see all available commands.");
+Type 'help' to see all available commands. Type an empty line to exit.");
 
-            // Parse the command-line arguments
             Parser.Default.ParseArguments<Options>(args)
                 .WithParsed(options =>
                 {
                     try
                     {
                         // Load hotel and booking data from the root of the repository
-                        var hotels = FileLoader.LoadHotels("../db/" + options.Hotels);
-                        var bookings = FileLoader.LoadBookings("../db/" + options.Bookings);
+                        var hotels = FileLoader.LoadHotels(options.Hotels);
+                        var bookings = FileLoader.LoadBookings(options.Bookings);
 
                         var manager = new HotelManager(hotels, bookings);
 
                         while (true)
                         {
+                            Console.Write("> ");
                             var input = Console.ReadLine();
-                            
-                            // Exit the program if the user types an empty line
-                            if (string.IsNullOrWhiteSpace(input)) break;
-                            
+
+                            if (string.IsNullOrWhiteSpace(input))
+                            {
+                                Console.WriteLine("Exiting. Thank you for using the Hotel Management System.");
+                                break;
+                            }
+
                             try
                             {
                                 var output = UserInputHandler.HandleCommand(manager, input);
@@ -60,14 +63,15 @@ Type 'help' to see all available commands.");
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine($"Error: {ex.Message}");
+                        Console.WriteLine($"Initialization Error: {ex.Message}");
                     }
                 })
                 .WithNotParsed(errors =>
                 {
+                    Console.WriteLine("Failed to parse arguments. Errors:");
                     foreach (var error in errors)
                     {
-                        Console.WriteLine($"Error: {error}");
+                        Console.WriteLine($" - {error}");
                     }
                 });
         }

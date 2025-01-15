@@ -6,23 +6,23 @@ Hotel Management is a command-line tool for managing hotel and booking data with
 
 **IMPORTANT:** This current version is only available for Windows machines.
 
-1. **Download the Application**
+1.  **Download the Application**
 
-   Download the compressed folder containing the executable and the necessary JSON files [here]().
+    Download the compressed folder containing the executable and the necessary JSON files [here]().
 
-2. **Uncompress the folder**
+2.  **Uncompress the folder**
 
-   Extract the contents of the downloaded folder to a location of your choice.
+    Extract the contents of the downloaded folder to a location of your choice.
 
-3. **Run the application.**
+3.  **Run the application.**
 
-   - (Option 1): **Double-click the executable file**
+    - **Use the Command Line**
 
-     This will directly start the application (recommended for desktop users).
+      Navigate to the folder where the application is located and run the command:
 
-   - (Option 2): **Use the Command Line**
-
-     Navigate to the folder where the application is located and run the command `XXX` (recommended for server users or those who need to specify a different JSON files locations or names).
+      ```bash
+      myapp.exe --hotels hotels.json --bookings bookings.json
+      ```
 
 # Contribution
 
