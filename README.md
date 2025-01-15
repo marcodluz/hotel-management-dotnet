@@ -8,7 +8,7 @@ Hotel Management is a command-line tool for managing hotel and booking data with
 
 1.  **Download the Application**
 
-    Download the compressed folder containing the executable and the necessary JSON files [here]().
+    Download the compressed HMS folder containing the executable and the necessary JSON files [here](https://github.com/marcodluz/hotel-management-dotnet/releases/tag/v1.0.0).
 
 2.  **Uncompress the folder**
 
